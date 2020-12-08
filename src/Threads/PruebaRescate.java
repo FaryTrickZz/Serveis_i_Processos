@@ -1,3 +1,4 @@
+package Threads;
 
 public class PruebaRescate implements Runnable {
 
@@ -10,9 +11,9 @@ public class PruebaRescate implements Runnable {
         Balsa balsa2 = new Balsa(pruebaRescateRunnable, (int) (Math.random() * (50 - 30) + 30));
         Balsa balsa3 = new Balsa(pruebaRescateRunnable, (int) (Math.random() * (60 - 40) + 40));
 
-        balsa1.setName("Balsa 1");
-        balsa2.setName("Balsa 2");
-        balsa3.setName("Balsa 3");
+        balsa1.setName("Threads.Balsa 1");
+        balsa2.setName("Threads.Balsa 2");
+        balsa3.setName("Threads.Balsa 3");
 
         balsa1.start();
         balsa2.start();

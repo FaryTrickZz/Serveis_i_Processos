@@ -1,3 +1,5 @@
+package Threads;
+
 public class Balsa extends Thread {
     private int numPlazas;
 

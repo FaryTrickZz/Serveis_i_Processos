@@ -1,3 +1,5 @@
+package Threads;
+
 public class DeadLock {
 
     public static Object object1 = new Object();

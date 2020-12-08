@@ -1,4 +1,4 @@
-/*
+package Threads;/*
  * esta clase contiene el atributo que guarda el número actual de náufragos y
  * el método para actualizarlo.
  */

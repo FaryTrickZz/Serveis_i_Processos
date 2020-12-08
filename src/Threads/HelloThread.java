@@ -1,3 +1,5 @@
+package Threads;
+
 class HelloThread implements Runnable {
     Thread t;
     HelloThread () {
