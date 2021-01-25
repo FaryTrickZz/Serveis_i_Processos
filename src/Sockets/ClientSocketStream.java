@@ -11,7 +11,7 @@ class ClienteSocketStream {
 
             Socket clientSocket = new Socket();
 
-            InetSocketAddress addr = new InetSocketAddress("localhost", 5555);
+            InetSocketAddress addr = new InetSocketAddress("localhost", 5556);
 
             clientSocket.connect(addr);
 

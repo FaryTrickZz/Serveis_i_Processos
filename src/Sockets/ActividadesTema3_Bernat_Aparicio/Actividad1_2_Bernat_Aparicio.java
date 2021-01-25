@@ -1,18 +1,21 @@
-package Sockets;
+package Sockets.ActividadesTema3_Bernat_Aparicio;
 
-import java.io.*;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.InetSocketAddress;
+import java.net.ServerSocket;
+import java.net.Socket;
 
-import java.net.*;
-
- class ServeridorSocketStream {
+public class Actividad1_2_Bernat_Aparicio {
 
     public static void main(String[] args) {
 
         try {
 
-            ServerSocket serverSocket = new ServerSocket(5556);
+            ServerSocket serverSocket = new ServerSocket(5555);
 
-            InetSocketAddress addr = new InetSocketAddress("localhost", 5556);
+            InetSocketAddress addr = new InetSocketAddress("localhost", 5555);
 
             Socket newSocket = serverSocket.accept();
 
@@ -26,7 +29,7 @@ import java.net.*;
 
             String str = new String(missatge);
 
-            System.out.println("hola"+str);
+            System.out.println(str);
 
             newSocket.close();
 
