@@ -4,46 +4,39 @@ import java.util.concurrent.Semaphore;
 
 public class SumaResta extends Thread{
     public static int numero = 10;
-    public String tipo = "";
     static Semaphore semaphore = new Semaphore(1);
     static SumaResta[] array = new SumaResta[20];
 
-    public SumaResta(String tipo) {
-        this.tipo = tipo;
+    public SumaResta() {
     }
 
     @Override
     public void run() {
         try {
+
             semaphore.acquire();
-            switch (tipo) {
-                case "suma":
-                    numero++;
-                    System.out.println(numero);
-                case "resta":
-                    numero--;
-                    System.out.println(numero);
+            System.out.println(currentThread().getName() +"/ ID del hilo: "+ currentThread().getId());
+            if(currentThread().getId()%2 == 0){
+                numero++;
+                System.out.println(numero);
+            } else {
+                numero--;
+                System.out.println(numero);
             }
             semaphore.release();
+
         } catch (InterruptedException e) {
             semaphore.release();
         }
-
-
     }
 
 
     public static void main(String args[]) {
         for(int i = 0;i < 20; i++) {
-            if(i%2 == 0){
-                SumaResta objeto = new SumaResta("suma");
-                array[i] = objeto;
-            } else {
-                SumaResta objeto = new SumaResta("resta");
-                array[i] = objeto;
+            SumaResta objeto = new SumaResta();
+                 array[i] = objeto;
             }
 
-        }
         array[0].start();
         array[1].start();
         array[2].start();

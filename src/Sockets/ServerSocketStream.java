@@ -10,7 +10,7 @@ import java.net.*;
 
         try {
 
-            ServerSocket serverSocket = new ServerSocket();
+            ServerSocket serverSocket = new ServerSocket(5555);
 
             InetSocketAddress addr = new InetSocketAddress("localhost", 5555);
 
@@ -23,6 +23,10 @@ import java.net.*;
             byte[] missatge = new byte[25];
 
             is.read(missatge);
+
+            String str = new String(missatge);
+
+            System.out.println(str);
 
             newSocket.close();
 
